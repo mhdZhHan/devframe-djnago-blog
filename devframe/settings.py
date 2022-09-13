@@ -103,7 +103,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = '/articles/'
+LOGIN_REDIRECT_URL = '/'
 
 LOGIN_URL = '/auth/login/'
 
