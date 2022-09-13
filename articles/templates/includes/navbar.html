@@ -1,0 +1,62 @@
+<header>
+    <div class="header_wrapper">
+        <h1 class="logo"><a href="{% url 'articles:articles' %}">DevFrame</a></h1>
+        {% if request.user.is_authenticated %}
+            <nav class="menu_left">
+                <ul>
+                    <li><a href="{% url 'articles:articles' %}">Home</a></li>
+                    <li><a href="{% url 'articles:add_article' %}">Add Article</a></li>
+                    <li class="dropdown">
+                        <div class="label">
+                            <span class="label_text">Profile</span>
+                            <span class="material-symbols-outlined">arrow_drop_down</span>
+                        </div>
+                        <ul class="dropdown_menu">
+                            <li><a href="{% url 'articles:change_password' %}">Update password</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'articles:logout' %}">Logout</a></li>
+                    <li class="search_toggle" id="search_toggle"><span class="material-symbols-outlined">search</span></li>
+                </ul>
+            </nav>
+        {% else %}
+            <nav class="menu_right">
+                <ul>
+                    <li><a href="{% url 'articles:login' %}">Login</a></li>
+                    <li><a href="{% url 'articles:register' %}">Register</a></li>
+                </ul>
+            </nav>
+        {% endif %}
+
+        <div class="mobile_menu_icon">
+            <span class="material-symbols-outlined">menu</span>
+        </div> <!--( .header__wrapper > .mobile_menu_icon )-->
+
+        <div class="mobile_menu_container">
+            {% if request.user.is_authenticated %}
+                <ul>
+                    <li><a href="{% url 'articles:articles' %}">Home</a></li>
+                    <li><a href="{% url 'articles:add_article' %}">Add Article</a></li>
+                    <li><a href="{% url 'articles:change_password' %}">Update password</a></li>
+                    <li><a href="{% url 'articles:logout' %}">Logout</a></li>
+                </ul>
+             {% else %}
+                <ul>
+                    <li><a href="{% url 'articles:login' %}">Login</a></li>
+                    <li><a href="{% url 'articles:register' %}">Register</a></li>
+                </ul>
+            {% endif %}
+        </div> <!--( .header__wrapper > .mobile_menu_container )-->
+
+        <div class="menu_close_icon">
+            <span class="material-symbols-outlined">close</span>
+        </div> <!--( .header__wrapper > .menu_close_icon )-->
+
+        <div class="search_container" id="search_box">
+            <div class="blog_search">
+                <input type="text" placeholder="Search" />
+                <input type="submit" value="Search" />
+            </div>
+        </div>
+    </div>
+</header>

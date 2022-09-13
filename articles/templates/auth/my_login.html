@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/auth.css' %}" />
+{% endblock %}
+
+{% block body %}
+    <section id="login">
+        <div class="wrapper">
+            <div class="form_container">
+                <div class="form_content">
+                    <div class="form_header">
+                        <h2>Login User</h2>
+                    </div>
+                    {% if form.errors %}
+                        <div class="error_message">
+                            <h4>Please enter the correct username and password for a staff account. Note that both fields may be case-sensitive. </h4>
+                        </div>
+                    {% endif %}
+                    <form action="{% url 'articles:login' %}" method="post" novalidate>
+                        {% csrf_token %}
+                        <div class="input_field">{{form.username}}</div>
+                        <div class="input_field">{{form.password}}</div>
+                        <div class="input_field">
+                            <input type="hidden" name="next" value="{{next}}" />
+                            <input type="submit" value="Login" >
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> <!--( #articles > .wrapper )-->
+    </section> <!--( #articles )-->
+{% endblock %}

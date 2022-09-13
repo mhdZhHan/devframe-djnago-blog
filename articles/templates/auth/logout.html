@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Logged out successfully.{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/auth.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/fixed_footer.css' %}" />
+{% endblock %}
+
+{% block body %}
+    <section id="logout_done" class="after_message">
+        <div class="wrapper">
+            <div class="message">
+                <h2>Logged out</h2>
+                <p>Thanks for spending some quality time with the web site today. <a href="{% url 'articles:login' %}">Login in again</a></p>
+            </div>
+        </div> <!--( #articles > .wrapper )-->
+    </section> <!--( #articles )-->
+{% endblock %}

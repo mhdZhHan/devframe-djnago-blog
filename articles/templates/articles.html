@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Articles{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/articles.css' %}" />
+{% endblock %}
+
+{% block body %}
+    <section id="articles">
+        <div class="wrapper">
+            <div class="head_title">
+                <h2 class="title">Latest blog posts</h2>
+            </div> <!--( #articles > .wrapper > .head_title )-->
+            <ul class="articles">
+                {% for article in articles %}
+                    <li class="article">
+                        <h2 class="article_title"><a href="{% url 'articles:article_details' article.slug %}">{{article.title}}</a></h2>
+                        <div class="article_info">
+                            <span class="material-symbols-outlined">person</span>
+                            <span class="author">{{article.author.first_name}}</span>
+                            <span class="comma">,</span>
+                            <span class="material-symbols-outlined">calendar_month</span>
+                            <span class="published_date">{{article.published.date}}</span>
+                        </div>
+                        <div class="article_body">
+                            <p>{{article.body}}</p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div> <!--( #articles > .wrapper )-->
+    </section> <!--( #articles )-->
+    <!-- paginator -->
+    {% include 'includes/paginator.html' with page=articles %}
+{% endblock %}

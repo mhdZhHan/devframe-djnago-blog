@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{article.title}}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/details.css' %}" />
+{% endblock %}
+
+{% block body %}
+    <section id="details">
+        <div class="wrapper">
+            <div class="container">
+                <div class="article_head">
+                    <h2 class="article_title">{{article.title}}</h2>
+                    {% if request.user == article.author %}
+                        <div class="options">
+                            <a href="{% url 'articles:update_article' article.slug %}">
+                                <span class="material-symbols-outlined edite">edit_note</span>
+                            </a>
+                            <a href="{% url 'articles:delete_article' article.slug %}">
+                                <span class="material-symbols-outlined delete">delete_forever</span>
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="article_info">
+                    <span class="material-symbols-outlined">person</span>
+                    <span class="author">{{article.author.first_name}}</span>
+                    <span class="comma">,</span>
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    <span class="published_date">{{article.published.date}}</span>
+                </div>
+                <div class="article_body">
+                    <p>{{article.body}}</p>
+                </div>
+            </div>
+        </div> <!--( #articles > .wrapper )-->
+    </section> <!--( #articles )-->
+    
+    <!-- paginator -->
+    {% include 'includes/details_paginator.html' with article=article  %}
+{% endblock %}

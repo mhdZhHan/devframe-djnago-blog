@@ -1,0 +1,31 @@
+{% load static %}
+<footer>
+    <div class="wrapper">
+        <div class="container">
+            <div class="left">
+                <h1 class="logo"><a href="{% url 'articles:articles' %}">DevFrame</a></h1>
+            </div> <!--( footer > .wrapper > .container > .left )-->
+            <div class="center">
+                <h4 class="list__title">Quick Links</h4>
+                <ul>
+                    <li><a href="{% url 'articles:articles' %}">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div> <!--( footer > .wrapper > .container > .center )-->
+            <div class="right">
+                <h4 class="list__title">Folow us on</h4>
+                <ul class="social_icons">
+                    <li><a href=""><img src="{% static '/assets/facebook.svg' %}" alt="facebook" /></a></li>
+                    <li><a href=""><img src="{% static '/assets/instagram.svg' %}" alt="instagram" /></a></li>
+                    <li><a href=""><img src="{% static '/assets/twitter.svg' %}" alt="twitter" /></a></li>
+                </ul>
+                <p>
+                    Developed by <a href="https://mohammedsh.com" target="_blank">mohammedsh.com</a> &copy; 2022
+                </p>
+                <p><a href="https://github.com/mohammedshajahan7/devframe-djnago-blog" target="_blank">View source</a></p>
+            </div> <!--( footer > .wrapper > .container > .right )-->
+        </div> <!--( footer > .wrapper > .container )-->
+    </div> <!--( footer > .wrapper )-->
+</footer>

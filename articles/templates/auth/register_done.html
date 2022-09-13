@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Account created{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/auth.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/fixed_footer.css' %}" />
+{% endblock %}
+
+{% block body %}
+    <section id="register_done" class="after_message">
+        <div class="wrapper">
+            <div class="message">
+                <h2>Welcome {{user.first_name}}</h2>
+                <p>Your account has been created, you can <a href="{% url 'articles:login' %}">Login Here</a></p>
+            </div>
+        </div> <!--( #articles > .wrapper )-->
+    </section> <!--( #articles )-->
+{% endblock %}

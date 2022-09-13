@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Article deleted.{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/auth.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/fixed_footer.css' %}" />
+{% endblock %}
+
+{% block body %}
+    <section id="article_deleted" class="after_message">
+        <div class="wrapper">
+            <div class="message">
+                <h2>Article Deleted</h2>
+                <p>Article deleted successfully. back to <a href="{% url 'articles:articles' %}">Home</a></p>
+            </div>
+        </div> <!--( #articles > .wrapper )-->
+    </section> <!--( #articles )-->
+{% endblock %}

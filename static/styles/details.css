@@ -1,0 +1,47 @@
+section#details {
+  padding: 90px 0 0;
+}
+section#details .wrapper .container {
+  line-height: 2;
+}
+section#details .wrapper .container .article_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section#details .wrapper .container .article_head .article_title {
+  font-size: 36px;
+  margin-right: 20px;
+}
+section#details .wrapper .container .article_head span {
+  display: inline-block;
+  font-size: 36px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 200ms;
+}
+section#details .wrapper .container .article_head span.edite {
+  color: teal;
+  margin-right: 20px;
+}
+section#details .wrapper .container .article_head span.edite:hover {
+  color: rgb(225, 219, 23);
+}
+section#details .wrapper .container .article_head span.delete {
+  color: teal;
+}
+section#details .wrapper .container .article_head span.delete:hover {
+  color: crimson;
+}
+section#details .wrapper .container .article_info {
+  display: flex;
+  align-items: center;
+}
+section#details .wrapper .container .article_info span {
+  display: inline-block;
+  margin-right: 4px;
+  color: teal;
+}
+section#details .wrapper .container .article_info span.comma {
+  margin-right: 10px;
+}/*# sourceMappingURL=details.css.map */

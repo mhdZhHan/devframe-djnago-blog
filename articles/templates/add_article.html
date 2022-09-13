@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Create article{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/auth.css' %}" />
+{% endblock %}
+
+{% block body %}
+    <section id="add_article" class="form_section">
+        <div class="wrapper">
+            <div class="form_container">
+                <div class="form_content">
+                    <div class="form_header">
+                        <h2>Login User</h2>
+                    </div>
+                    {% if form.errors %}
+                        <div class="error_message">
+                            <h4>{{form.errors}}</h4>
+                        </div>
+                    {% endif %}
+                    <form action="" method="post" novalidate>
+                        {% csrf_token %}
+                        <div class="input_field">
+                            <label for="{{form.title.id_for_label}}">{{form.title.label}}:</label>
+                            {{form.title}}
+                        </div>
+                        <div class="input_field">
+                            <label for="{{form.body.id_for_label}}">{{form.body.label}}:</label>
+                            {{form.body}}
+                        </div>
+                        <div class="input_field">
+                            <input type="submit" value="Add Article" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> <!--( #articles > .wrapper )-->
+    </section> <!--( #articles )-->
+{% endblock %}

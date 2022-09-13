@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}New user{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/auth.css' %}" />
+{% endblock %}
+
+{% block body %}
+    <section id="register" class="form_section">
+        <div class="wrapper">
+            <div class="form_container">
+                <div class="form_content">
+                    <div class="form_header">
+                        <h2>Register User</h2>
+                    </div>
+                    {% if form.errors %}
+                        <div class="error_message">
+                            <h4>{{form.errors}}</h4>
+                        </div>
+                    {% endif %}
+                    <form action="{% url 'articles:register' %}" method="post" novalidate>
+                        {% csrf_token %}
+                        <div class="input_field">
+                            <label for="{{form.first_name.id_for_label}}">{{form.first_name.label}}:</label>
+                            {{form.first_name}}
+                        </div>
+                        <div class="input_field">
+                            <label for="{{form.username.id_for_label}}">{{form.username.label}}:</label>
+                            {{form.username}}
+                        </div>
+                        <div class="input_field">
+                            <label for="{{form.email.id_for_label}}">{{form.email.label}}:</label>
+                            {{form.email}}
+                        </div>
+                        <div class="input_field">
+                            <label for="{{form.password.id_for_label}}">{{form.password.label}}:</label>
+                            {{form.password}}
+                        </div>
+                        <div class="input_field">
+                            <label for="{{form.confirm_password.id_for_label}}">{{form.confirm_password.label}}:</label>
+                            {{form.confirm_password}}
+                        </div>
+                        <div class="input_field">
+                            <input type="submit" value="Create Account" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> <!--( #articles > .wrapper )-->
+    </section> <!--( #articles )-->
+{% endblock %}
