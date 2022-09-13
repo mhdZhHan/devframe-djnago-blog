@@ -7,7 +7,7 @@ from articles import views
 app_name = "articles"
 
 urlpatterns = [
-    path('articles/', views.articles, name='articles'),
+    path('', views.articles, name='articles'),
     path('articles/<slug:slug>/', views.article_details, name='article_details'),
     path('article/create/', views.add_article, name='add_article'),
     path('article/update/<slug:slug>/', views.update_article, name='update_article'),
