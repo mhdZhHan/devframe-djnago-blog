@@ -1,0 +1,99 @@
+.form_section {
+  padding: 114px 0 0;
+}
+.form_section .wrapper .head_title {
+  text-align: center;
+}
+.form_section .wrapper .form_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form_section .wrapper .form_container .form_content {
+  min-width: 50%;
+  width: 450px;
+  box-shadow: 0 4px 13px -3px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+@media all and (max-width: 980px) {
+  .form_section .wrapper .form_container .form_content {
+    width: 500px;
+  }
+}
+.form_section .wrapper .form_container .form_content .form_header {
+  background-color: teal;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 4px 4px 0 0;
+}
+.form_section .wrapper .form_container .form_content .error_message {
+  margin: 16px 32px 0;
+  border: 2px solid teal;
+  padding: 16px;
+  border-radius: 4px;
+}
+.form_section .wrapper .form_container .form_content .error_message h4 {
+  color: crimson;
+  font-weight: 500;
+  font-size: 16px;
+}
+.form_section .wrapper .form_container .form_content form {
+  padding: 32px;
+}
+.form_section .wrapper .form_container .form_content form .input_field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form_section .wrapper .form_container .form_content form .input_field label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #000;
+}
+.form_section .wrapper .form_container .form_content form .input_field input, .form_section .wrapper .form_container .form_content form .input_field textarea {
+  display: block;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  color: #000;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border: 2px solid #b9b9b9;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+.form_section .wrapper .form_container .form_content form .input_field input:focus, .form_section .wrapper .form_container .form_content form .input_field textarea:focus {
+  border-color: teal;
+}
+.form_section .wrapper .form_container .form_content form .input_field input[type=submit] {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  background-color: crimson;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.after_message {
+  padding: 114px 0 0;
+}
+.after_message .wrapper .message h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+.after_message .wrapper .message p {
+  font-size: 16px;
+  color: teal;
+}
+.after_message .wrapper .message p a {
+  display: inline-block;
+  color: crimson;
+}/*# sourceMappingURL=auth.css.map */

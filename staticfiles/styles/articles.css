@@ -1,0 +1,35 @@
+section#articles {
+  padding: 100px 0 0;
+}
+section#articles .wrapper ul.articles li.article {
+  margin-bottom: 20px;
+  line-height: 2;
+}
+section#articles .wrapper ul.articles li.article:last-child {
+  margin-bottom: 0;
+}
+section#articles .wrapper ul.articles li.article .article_title a {
+  display: block;
+  font-size: 36px;
+}
+@media all and (max-width: 600px) {
+  section#articles .wrapper ul.articles li.article .article_title a {
+    font-size: 32px;
+  }
+}
+section#articles .wrapper ul.articles li.article .article_info {
+  display: flex;
+  align-items: center;
+}
+section#articles .wrapper ul.articles li.article .article_info span {
+  display: inline-block;
+  margin-right: 4px;
+  color: teal;
+}
+section#articles .wrapper ul.articles li.article .article_info span.comma {
+  margin-right: 10px;
+}
+section#articles .wrapper ul.articles li.article .article_body p {
+  max-height: 90px;
+  overflow: hidden;
+}/*# sourceMappingURL=articles.css.map */
