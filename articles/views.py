@@ -80,7 +80,7 @@ def add_article(request):
             article = form.save(commit=False)
             article.author = request.user
             article.save()
-            return redirect('/articles')
+            return redirect('/')
     else:
         form = ArticleForm()
     context = {
