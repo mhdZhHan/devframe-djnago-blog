@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-ke5h1g=b!0wbv96q9=q%^^_34i)(f4!cfk*z)js$&o1e+zgahv
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['devframe-django-blog.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['devframe-django-blog.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
