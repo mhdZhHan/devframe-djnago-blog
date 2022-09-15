@@ -7,10 +7,11 @@ window.addEventListener('load', ()=>{
     const menuCloseIcon = document.querySelector('.menu_close_icon')
 
     // search toggle
-    searchIcon.addEventListener('click', ()=>{
-        searchBox.classList.toggle('active')
-    })
-
+    if(searchIcon !== null){
+        searchIcon.addEventListener('click', ()=>{
+            searchBox.classList.toggle('active')
+        })    
+    }
     // mobile menu
     mobileMenuIcon.addEventListener('click', ()=>{
         mobileMenu.classList.add('active')
